@@ -7,5 +7,6 @@
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
-npm-debug.log
+npm-debug.log.*
 yarn-error.log
+../Storonnim-V_front/
