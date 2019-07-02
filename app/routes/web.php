@@ -14,10 +14,8 @@
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/lte', function () {
-    return view('welcomeLTE');
-});
 
-Auth::routes();
+
+Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
