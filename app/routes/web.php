@@ -17,3 +17,7 @@ Route::get('/', function () {
 Route::get('/lte', function () {
     return view('welcomeLTE');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
