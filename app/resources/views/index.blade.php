@@ -144,227 +144,246 @@
 		<!-- <p class="StoronnimV-news-section__section-name">НОВИНИ</p> -->
 		<div class="container">
 			<div class="row StoronnimV-news-section__news-wrap">
+				@foreach($news as $news)
+					<div class="col-md-10 col-lg-6 StoronnimV-news-section__news">
+						<div class="StoronnimV-news-section__news-content">
+							<div class="StoronnimV-news-section__text-div">
+								<div class="StoronnimV-news-section__wrap-main-text">
+									<a href="#" class="StoronnimV-news-section__heading">{{ $news->title }}<!--  Названiе новостi Названiе новостi Названiе новостi Названiе новостi Названiе --></a>
+									<p class="StoronnimV-news-section__description">{{ $news->content }}</p>
+								</div>
+								<div class="StoronnimV-news-section__news-footer">
+									<a href="#" class="StoronnimV-news-section__like">120</a>
+									<a href="#" class="StoronnimV-news-section__read-more">Дізнатися більше</a>
+								</div>
+							</div>
+						</div>
+						<div class="StoronnimV-news-section__news-date-div">
+							<span class="StoronnimV-news-section__month">{{ $news->updated_at->format('M') }}</span>
+							<span class="StoronnimV-news-section__day">{{ $news->updated_at->format('d') }}</span>
+						</div>
+					</div>
+				@endforeach
+				{{--<div class="col-md-10 col-lg-6 StoronnimV-news-section__news">
+					<!-- <div class="padding-hack">
+						<img src="img/news1.jpg" alt="img" class="img">
+					</div>
+					<div class="StoronnimV-news-section__news-text-div"></div>
+					<div class="StoronnimV-news-section__news-date-div">
+						<span class="StoronnimV-news-section__month">ИЮН</span>
+						<span class="StoronnimV-news-section__day">12</span>
+					</div> -->
+					<div class="StoronnimV-news-section__news-content">
+						<div class="StoronnimV-news-section__text-div">
+							<div class="StoronnimV-news-section__wrap-main-text">
+								<a href="#" class="StoronnimV-news-section__heading">Названiе новости<!--  Названiе новостi Названiе новостi Названiе новостi Названiе новостi Названiе --></a>
+								<p class="StoronnimV-news-section__description">Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний Дополнiтельний текстД ополнiтельний текст</p>
+							</div>
+							<div class="StoronnimV-news-section__news-footer">
+								<a href="#" class="StoronnimV-news-section__like">120</a>
+								<a href="#" class="StoronnimV-news-section__read-more">Дізнатися більше</a>
+							</div>
+						</div>
+					</div>
+					<div class="StoronnimV-news-section__news-date-div">
+						<span class="StoronnimV-news-section__month">ИЮН</span>
+						<span class="StoronnimV-news-section__day">12</span>
+					</div>
+				</div>
 				<div class="col-md-10 col-lg-6 StoronnimV-news-section__news">
-						<!-- <div class="padding-hack">
-							<img src="img/news1.jpg" alt="img" class="img">
-						</div>
-						<div class="StoronnimV-news-section__news-text-div"></div>
-						<div class="StoronnimV-news-section__news-date-div">
-							<span class="StoronnimV-news-section__month">ИЮН</span>
-							<span class="StoronnimV-news-section__day">12</span>
-						</div> -->
-						<div class="StoronnimV-news-section__news-content">
-							<div class="StoronnimV-news-section__text-div">
-								<div class="StoronnimV-news-section__wrap-main-text">
-									<a href="#" class="StoronnimV-news-section__heading">Названiе новости<!--  Названiе новостi Названiе новостi Названiе новостi Названiе новостi Названiе --></a>
-									<p class="StoronnimV-news-section__description">Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний Дополнiтельний текстД ополнiтельний текст</p>
-								</div>
-								<div class="StoronnimV-news-section__news-footer">
-									<a href="#" class="StoronnimV-news-section__like">120</a>
-									<a href="#" class="StoronnimV-news-section__read-more">Дізнатися більше</a>
-								</div>
+					<div class="StoronnimV-news-section__news-content">
+						<div class="StoronnimV-news-section__text-div">
+							<div class="StoronnimV-news-section__wrap-main-text">
+								<a href="#" class="StoronnimV-news-section__heading">Названiе новости<!--  Названiе новостi Названiе новостi Названiе новостi Названiе новостi Названiе --></a>
+								<p class="StoronnimV-news-section__description">Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний Дополнiтельний текстД ополнiтельний текст</p>
 							</div>
-						</div>
-						<div class="StoronnimV-news-section__news-date-div">
-							<span class="StoronnimV-news-section__month">ИЮН</span>
-							<span class="StoronnimV-news-section__day">12</span>
-						</div>
-					</div>
-					<div class="col-md-10 col-lg-6 StoronnimV-news-section__news">
-						<div class="StoronnimV-news-section__news-content">
-							<div class="StoronnimV-news-section__text-div">
-								<div class="StoronnimV-news-section__wrap-main-text">
-									<a href="#" class="StoronnimV-news-section__heading">Названiе новости<!--  Названiе новостi Названiе новостi Названiе новостi Названiе новостi Названiе --></a>
-									<p class="StoronnimV-news-section__description">Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний Дополнiтельний текстД ополнiтельний текст</p>
-								</div>
-								<div class="StoronnimV-news-section__news-footer">
-									<a href="#" class="StoronnimV-news-section__like">120</a>
-									<a href="#" class="StoronnimV-news-section__read-more">Дізнатися більше</a>
-								</div>
+							<div class="StoronnimV-news-section__news-footer">
+								<a href="#" class="StoronnimV-news-section__like">120</a>
+								<a href="#" class="StoronnimV-news-section__read-more">Дізнатися більше</a>
 							</div>
-						</div>
-
-						<div class="StoronnimV-news-section__news-date-div">
-							<span class="StoronnimV-news-section__month">ИЮН</span>
-							<span class="StoronnimV-news-section__day">12</span>
 						</div>
 					</div>
 
-					<div class="col-md-10 col-lg-6 StoronnimV-news-section__news">
-						<div class="StoronnimV-news-section__news-content">
-							<div class="StoronnimV-news-section__text-div">
-								<div class="StoronnimV-news-section__wrap-main-text">
-									<a href="#" class="StoronnimV-news-section__heading">Названiе новости<!--  Названiе новостi Названiе новостi Названiе новостi Названiе новостi Названiе --></a>
-									<p class="StoronnimV-news-section__description">Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний Дополнiтельний текстД ополнiтельний текст</p>
-								</div>
-								<div class="StoronnimV-news-section__news-footer">
-									<a href="#" class="StoronnimV-news-section__like">120</a>
-									<a href="#" class="StoronnimV-news-section__read-more">Дізнатися більше</a>
-								</div>
+					<div class="StoronnimV-news-section__news-date-div">
+						<span class="StoronnimV-news-section__month">ИЮН</span>
+						<span class="StoronnimV-news-section__day">12</span>
+					</div>
+				</div>
+				<div class="col-md-10 col-lg-6 StoronnimV-news-section__news">
+					<div class="StoronnimV-news-section__news-content">
+						<div class="StoronnimV-news-section__text-div">
+							<div class="StoronnimV-news-section__wrap-main-text">
+								<a href="#" class="StoronnimV-news-section__heading">Названiе новости<!--  Названiе новостi Названiе новостi Названiе новостi Названiе новостi Названiе --></a>
+								<p class="StoronnimV-news-section__description">Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний Дополнiтельний текстД ополнiтельний текст</p>
+							</div>
+							<div class="StoronnimV-news-section__news-footer">
+								<a href="#" class="StoronnimV-news-section__like">120</a>
+								<a href="#" class="StoronnimV-news-section__read-more">Дізнатися більше</a>
 							</div>
 						</div>
-						<div class="StoronnimV-news-section__news-date-div">
-							<span class="StoronnimV-news-section__month">ИЮН</span>
-							<span class="StoronnimV-news-section__day">12</span>
-						</div>
 					</div>
-					<div class="col-md-10 col-lg-6 StoronnimV-news-section__news">
-						<div class="StoronnimV-news-section__news-content">
-							<div class="StoronnimV-news-section__text-div">
-								<div class="StoronnimV-news-section__wrap-main-text">
-									<a href="#" class="StoronnimV-news-section__heading">Названiе новости<!--  Названiе новостi Названiе новостi Названiе новостi Названiе новостi Названiе --></a>
-									<p class="StoronnimV-news-section__description">Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний Дополнiтельний текстД ополнiтельний текст</p>
-								</div>
-								<div class="StoronnimV-news-section__news-footer">
-									<a href="#" class="StoronnimV-news-section__like">120</a>
-									<a href="#" class="StoronnimV-news-section__read-more">Дізнатися більше</a>
-								</div>
+					<div class="StoronnimV-news-section__news-date-div">
+						<span class="StoronnimV-news-section__month">ИЮН</span>
+						<span class="StoronnimV-news-section__day">12</span>
+					</div>
+				</div>
+				<div class="col-md-10 col-lg-6 StoronnimV-news-section__news">
+					<div class="StoronnimV-news-section__news-content">
+						<div class="StoronnimV-news-section__text-div">
+							<div class="StoronnimV-news-section__wrap-main-text">
+								<a href="#" class="StoronnimV-news-section__heading">Названiе новости<!--  Названiе новостi Названiе новостi Названiе новостi Названiе новостi Названiе --></a>
+								<p class="StoronnimV-news-section__description">Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний Дополнiтельний текстД ополнiтельний текст</p>
+							</div>
+							<div class="StoronnimV-news-section__news-footer">
+								<a href="#" class="StoronnimV-news-section__like">120</a>
+								<a href="#" class="StoronnimV-news-section__read-more">Дізнатися більше</a>
 							</div>
 						</div>
-						<div class="StoronnimV-news-section__news-date-div">
-							<span class="StoronnimV-news-section__month">ИЮН</span>
-							<span class="StoronnimV-news-section__day">12</span>
-						</div>
 					</div>
+					<div class="StoronnimV-news-section__news-date-div">
+						<span class="StoronnimV-news-section__month">ИЮН</span>
+						<span class="StoronnimV-news-section__day">12</span>
+					</div>
+				</div>--}}
+			</div>
+		</div>
+	</div>
+	<section class="section StoronnimV-music-section">
+		<div class="container">
+			<div class="row StoronnimV-music-section__row">
+				<div class="col-lg-12 StoronnimV-music-section__col-head">
+					<h2 class="StoronnimV-music-section__heading">МУЗИКА</h2>
+				</div>
+				<div class="col-md-6 col-lg-4 StoronnimV-music-section__col">
+					<div class="StoronnimV-music-section__title"><span class="StoronnimV-music-section__name-of-albom">АЛЬБОМ АЛЬБОМ</span></div>
+					<div class="StoronnimV-music-section__date"><span class="StoronnimV-music-section__name-of-song">ПІСНЯ ПІСНЯ</span></div>
+					<a href="#" class="StoronnimV-music-section__listen">Слухати</a>
+				</div>
+				<div class="col-md-6 col-lg-4 StoronnimV-music-section__col">
+					<div class="StoronnimV-music-section__title"><span class="StoronnimV-music-section__name-of-albom">АЛЬБОМ АЛЬБОМ</span></div>
+					<div class="StoronnimV-music-section__date"><span class="StoronnimV-music-section__name-of-song">ПІСНЯ ПІСНЯ</span></div>
+					<a href="#" class="StoronnimV-music-section__listen">Слухати</a>
+				</div>
+				<div class="col-md-6 col-lg-4 StoronnimV-music-section__col">
+					<div class="StoronnimV-music-section__title"><span class="StoronnimV-music-section__name-of-albom">АЛЬБОМ АЛЬБОМ</span></div>
+					<div class="StoronnimV-music-section__date"><span class="StoronnimV-music-section__name-of-song">ПІСНЯ ПІСНЯ</span></div>
+					<a href="#" class="StoronnimV-music-section__listen">Слухати</a>
+				</div>
+				<div class="col-md-6 col-lg-4 StoronnimV-music-section__col">
+					<div class="StoronnimV-music-section__title"><span class="StoronnimV-music-section__name-of-albom">АЛЬБОМ АЛЬБОМ</span></div>
+					<div class="StoronnimV-music-section__date"><span class="StoronnimV-music-section__name-of-song">ПІСНЯ ПІСНЯ</span></div>
+					<a href="#" class="StoronnimV-music-section__listen">Слухати</a>
+				</div>
+				<div class="col-md-6 col-lg-4 StoronnimV-music-section__col">
+					<div class="StoronnimV-music-section__title"><span class="StoronnimV-music-section__name-of-albom">АЛЬБОМ АЛЬБОМ</span></div>
+					<div class="StoronnimV-music-section__date"><span class="StoronnimV-music-section__name-of-song">ПІСНЯ ПІСНЯ</span></div>
+					<a href="#" class="StoronnimV-music-section__listen">Слухати</a>
+				</div>
+				<div class="col-md-6 col-lg-4 StoronnimV-music-section__col">
+					<div class="StoronnimV-music-section__title"><span class="StoronnimV-music-section__name-of-albom">АЛЬБОМ АЛЬБОМ</span></div>
+					<div class="StoronnimV-music-section__date"><span class="StoronnimV-music-section__name-of-song">ПІСНЯ ПІСНЯ</span></div>
+					<a href="#" class="StoronnimV-music-section__listen">Слухати</a>
 				</div>
 			</div>
 		</div>
-		<section class="section StoronnimV-music-section">
+	</section>
+	<div class="section StoronnimV-video-section">
+		<div class="container">
+			<div class="row StoronnimV-video-section__row">
+				<div class="col-lg-12 StoronnimV-video-section__col-head">
+					<h2 class="StoronnimV-video-section__heading">ВІДЕО</h2>
+				</div>
+				<div class="col-md-6 col-lg-4 StoronnimV-video-section__col">
+					<div class="StoronnimV-video-section__title"><span class="StoronnimV-video-section__name-of-video">ВІДЕО ГУРТУ ВІДЕО</span></div>
+					<a href="#" class="StoronnimV-video-section__watch">Дивитися</a>
+				</div>
+				<div class="col-md-6 col-lg-4 StoronnimV-video-section__col">
+					<div class="StoronnimV-video-section__title"><span class="StoronnimV-video-section__name-of-video">ВІДЕО ГУРТУ ВІДЕО</span></div>
+					<a href="#" class="StoronnimV-video-section__watch">Дивитися</a>
+				</div>
+				<div class="col-md-6 col-lg-4 StoronnimV-video-section__col">
+					<div class="StoronnimV-video-section__title"><span class="StoronnimV-video-section__name-of-video">ВІДЕО ГУРТУ ВІДЕО</span></div>
+					<a href="#" class="StoronnimV-video-section__watch">Дивитися</a>
+				</div>
+				<div class="col-md-6 col-lg-4 StoronnimV-video-section__col">
+					<div class="StoronnimV-video-section__title"><span class="StoronnimV-video-section__name-of-video">ВІДЕО ГУРТУ ВІДЕО</span></div>
+					<a href="#" class="StoronnimV-video-section__watch">Дивитися</a>
+				</div>
+				<div class="col-md-6 col-lg-4 StoronnimV-video-section__col">
+					<div class="StoronnimV-video-section__title"><span class="StoronnimV-video-section__name-of-video">ВІДЕО ГУРТУ ВІДЕО</span></div>
+					<a href="#" class="StoronnimV-video-section__watch">Дивитися</a>
+				</div>
+				<div class="col-md-6 col-lg-4 StoronnimV-video-section__col">
+					<div class="StoronnimV-video-section__title"><span class="StoronnimV-video-section__name-of-video">ВІДЕО ГУРТУ ВІДЕО</span></div>
+					<a href="#" class="StoronnimV-video-section__watch">Дивитися</a>
+				</div>
+				<div class="col-md-6 col-lg-4 StoronnimV-video-section__col">
+					<div class="StoronnimV-video-section__title"><span class="StoronnimV-video-section__name-of-video">ВІДЕО ГУРТУ ВІДЕО</span></div>
+					<a href="#" class="StoronnimV-video-section__watch">Дивитися</a>
+				</div>
+				<div class="col-md-6 col-lg-4 StoronnimV-video-section__col">
+					<div class="StoronnimV-video-section__title"><span class="StoronnimV-video-section__name-of-video">ВІДЕО ГУРТУ ВІДЕО</span></div>
+					<a href="#" class="StoronnimV-video-section__watch">Дивитися</a>
+				</div>
+				<div class="col-md-6 col-lg-4 StoronnimV-video-section__col">
+					<div class="StoronnimV-video-section__title"><span class="StoronnimV-video-section__name-of-video">ВІДЕО ГУРТУ ВІДЕО</span></div>
+					<a href="#" class="StoronnimV-video-section__watch">Дивитися</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section StoronnimV-gallery-section">
+		<div class="slide" data-anchor="slide1">
 			<div class="container">
-				<div class="row StoronnimV-music-section__row">
-					<div class="col-lg-12 StoronnimV-music-section__col-head">
-						<h2 class="StoronnimV-music-section__heading">МУЗИКА</h2>
-					</div>
-					<div class="col-md-6 col-lg-4 StoronnimV-music-section__col">
-						<div class="StoronnimV-music-section__title"><span class="StoronnimV-music-section__name-of-albom">АЛЬБОМ АЛЬБОМ</span></div>
-						<div class="StoronnimV-music-section__date"><span class="StoronnimV-music-section__name-of-song">ПІСНЯ ПІСНЯ</span></div>
-						<a href="#" class="StoronnimV-music-section__listen">Слухати</a>
-					</div>
-					<div class="col-md-6 col-lg-4 StoronnimV-music-section__col">
-						<div class="StoronnimV-music-section__title"><span class="StoronnimV-music-section__name-of-albom">АЛЬБОМ АЛЬБОМ</span></div>
-						<div class="StoronnimV-music-section__date"><span class="StoronnimV-music-section__name-of-song">ПІСНЯ ПІСНЯ</span></div>
-						<a href="#" class="StoronnimV-music-section__listen">Слухати</a>
-					</div>
-					<div class="col-md-6 col-lg-4 StoronnimV-music-section__col">
-						<div class="StoronnimV-music-section__title"><span class="StoronnimV-music-section__name-of-albom">АЛЬБОМ АЛЬБОМ</span></div>
-						<div class="StoronnimV-music-section__date"><span class="StoronnimV-music-section__name-of-song">ПІСНЯ ПІСНЯ</span></div>
-						<a href="#" class="StoronnimV-music-section__listen">Слухати</a>
-					</div>
-					<div class="col-md-6 col-lg-4 StoronnimV-music-section__col">
-						<div class="StoronnimV-music-section__title"><span class="StoronnimV-music-section__name-of-albom">АЛЬБОМ АЛЬБОМ</span></div>
-						<div class="StoronnimV-music-section__date"><span class="StoronnimV-music-section__name-of-song">ПІСНЯ ПІСНЯ</span></div>
-						<a href="#" class="StoronnimV-music-section__listen">Слухати</a>
-					</div>
-					<div class="col-md-6 col-lg-4 StoronnimV-music-section__col">
-						<div class="StoronnimV-music-section__title"><span class="StoronnimV-music-section__name-of-albom">АЛЬБОМ АЛЬБОМ</span></div>
-						<div class="StoronnimV-music-section__date"><span class="StoronnimV-music-section__name-of-song">ПІСНЯ ПІСНЯ</span></div>
-						<a href="#" class="StoronnimV-music-section__listen">Слухати</a>
-					</div>
-					<div class="col-md-6 col-lg-4 StoronnimV-music-section__col">
-						<div class="StoronnimV-music-section__title"><span class="StoronnimV-music-section__name-of-albom">АЛЬБОМ АЛЬБОМ</span></div>
-						<div class="StoronnimV-music-section__date"><span class="StoronnimV-music-section__name-of-song">ПІСНЯ ПІСНЯ</span></div>
-						<a href="#" class="StoronnimV-music-section__listen">Слухати</a>
-					</div>
-				</div>
-			</div>
-		</section>
-		<div class="section StoronnimV-video-section">
-			<div class="container">
-				<div class="row StoronnimV-video-section__row">
-					<div class="col-lg-12 StoronnimV-video-section__col-head">
-						<h2 class="StoronnimV-video-section__heading">ВІДЕО</h2>
-					</div>
-					<div class="col-md-6 col-lg-4 StoronnimV-video-section__col">
-						<div class="StoronnimV-video-section__title"><span class="StoronnimV-video-section__name-of-video">ВІДЕО ГУРТУ ВІДЕО</span></div>
-						<a href="#" class="StoronnimV-video-section__watch">Дивитися</a>
-					</div>
-					<div class="col-md-6 col-lg-4 StoronnimV-video-section__col">
-						<div class="StoronnimV-video-section__title"><span class="StoronnimV-video-section__name-of-video">ВІДЕО ГУРТУ ВІДЕО</span></div>
-						<a href="#" class="StoronnimV-video-section__watch">Дивитися</a>
-					</div>
-					<div class="col-md-6 col-lg-4 StoronnimV-video-section__col">
-						<div class="StoronnimV-video-section__title"><span class="StoronnimV-video-section__name-of-video">ВІДЕО ГУРТУ ВІДЕО</span></div>
-						<a href="#" class="StoronnimV-video-section__watch">Дивитися</a>
-					</div>
-					<div class="col-md-6 col-lg-4 StoronnimV-video-section__col">
-						<div class="StoronnimV-video-section__title"><span class="StoronnimV-video-section__name-of-video">ВІДЕО ГУРТУ ВІДЕО</span></div>
-						<a href="#" class="StoronnimV-video-section__watch">Дивитися</a>
-					</div>
-					<div class="col-md-6 col-lg-4 StoronnimV-video-section__col">
-						<div class="StoronnimV-video-section__title"><span class="StoronnimV-video-section__name-of-video">ВІДЕО ГУРТУ ВІДЕО</span></div>
-						<a href="#" class="StoronnimV-video-section__watch">Дивитися</a>
-					</div>
-					<div class="col-md-6 col-lg-4 StoronnimV-video-section__col">
-						<div class="StoronnimV-video-section__title"><span class="StoronnimV-video-section__name-of-video">ВІДЕО ГУРТУ ВІДЕО</span></div>
-						<a href="#" class="StoronnimV-video-section__watch">Дивитися</a>
-					</div>
-					<div class="col-md-6 col-lg-4 StoronnimV-video-section__col">
-						<div class="StoronnimV-video-section__title"><span class="StoronnimV-video-section__name-of-video">ВІДЕО ГУРТУ ВІДЕО</span></div>
-						<a href="#" class="StoronnimV-video-section__watch">Дивитися</a>
-					</div>
-					<div class="col-md-6 col-lg-4 StoronnimV-video-section__col">
-						<div class="StoronnimV-video-section__title"><span class="StoronnimV-video-section__name-of-video">ВІДЕО ГУРТУ ВІДЕО</span></div>
-						<a href="#" class="StoronnimV-video-section__watch">Дивитися</a>
-					</div>
-					<div class="col-md-6 col-lg-4 StoronnimV-video-section__col">
-						<div class="StoronnimV-video-section__title"><span class="StoronnimV-video-section__name-of-video">ВІДЕО ГУРТУ ВІДЕО</span></div>
-						<a href="#" class="StoronnimV-video-section__watch">Дивитися</a>
-					</div>
+				<div class="row StoronnimV-gallery-section__row">
+					<h2 class="col-12 StoronnimV-gallery-section__head">ГАЛЕРЕЯ</h2>
+					<a href="#" class="col-12 StoronnimV-gallery-section__img-wrapper">СТОРОННІМ В</a>
 				</div>
 			</div>
 		</div>
-		<div class="section StoronnimV-gallery-section">
-			<div class="slide" data-anchor="slide1">
-				<div class="container">
-					<div class="row StoronnimV-gallery-section__row">
-						<h2 class="col-12 StoronnimV-gallery-section__head">ГАЛЕРЕЯ</h2>
-						<a href="#" class="col-12 StoronnimV-gallery-section__img-wrapper">СТОРОННІМ В</a>
-					</div>
-				</div>
+		<div class="slide" data-anchor="slide2"><div class="container">
+			<div class="row StoronnimV-gallery-section__row">
+				<h2 class="col-12 StoronnimV-gallery-section__head">ГАЛЕРЕЯ</h2>
+				<a href="#" class="col-12 StoronnimV-gallery-section__img-wrapper">СТОРОННІМ В</a>
 			</div>
-			<div class="slide" data-anchor="slide2"><div class="container">
-				<div class="row StoronnimV-gallery-section__row">
-					<h2 class="col-12 StoronnimV-gallery-section__head">ГАЛЕРЕЯ</h2>
-					<a href="#" class="col-12 StoronnimV-gallery-section__img-wrapper">СТОРОННІМ В</a>
-				</div>
-			</div></div>
-			<div class="slide" data-anchor="slide3"><div class="container">
-				<div class="row StoronnimV-gallery-section__row">
-					<h2 class="col-12 StoronnimV-gallery-section__head">ГАЛЕРЕЯ</h2>
-					<a href="#" class="col-12 StoronnimV-gallery-section__img-wrapper">СТОРОННІМ В</a>
-				</div>
-			</div></div>
-			<div class="slide" data-anchor="slide4"><div class="container">
-				<div class="row StoronnimV-gallery-section__row">
-					<h2 class="col-12 StoronnimV-gallery-section__head">ГАЛЕРЕЯ</h2>
-					<a href="#" class="col-12 StoronnimV-gallery-section__img-wrapper">СТОРОННІМ В</a>
-				</div>
-			</div></div>
-		</div>
-		<div class="section StoronnimV-contact-section">
-			<footer class="StoronnimV-contact-section__footer">
-				<div class="container-fluid StoronnimV-contact-section__container-fluid">
-					<span class="StoronnimV-contact-section__copyright">© 2019 Company. All right reserved.</span>
-					<span class="StoronnimV-contact-section__name">Стороннім В</span>
-					<ul class="StoronnimV-contact-section__list">
-						<li class="StoronnimV-contact-section__list-item"><a target="_blank" href="https://soundcloud.com/apostolkremenchug"><img src="{{ asset('img/icons/soundcloud.svg') }}" alt=""></a></li> 
-						<li class="StoronnimV-contact-section__list-item"><a target="_blank" href="https://www.facebook.com/%D0%A1%D1%82%D0%BE%D1%80%D0%BE%D0%BD%D0%BD%D1%96%D0%BC-%D0%92-377358619512485/"><img src="{{ asset('img/icons/facebook.svg') }}" alt=""></a></li>
-						<li class="StoronnimV-contact-section__list-item"><a target="_blank" href="https://www.youtube.com/"><img src="{{ asset('img/icons/youtube.svg') }}" alt=""></a></li>
-						<li class="StoronnimV-contact-section__list-item"><a target="_blank" href="#"><img src="{{ asset('img/icons/social/telegram.svg') }}" alt=""></a></li>
-					</ul>
-				</div>
-			</footer>
-			<div id="map"></div>
-			<div class="container StoronnimV-contact-section__container">
-				<div class="row StoronnimV-contact-section__row">
-					<div class="col-md-12 col-lg-8 StoronnimV-contact-section__col">
-						<p class="StoronnimV-contact-section__head">Зв'яжіться з нами</p>
-						<form action="#" class="StoronnimV-contact-section__form">
-							<input type="email" class="StoronnimV-contact-section__email" placeholder="Ваша пошта ...">
-							<textarea class="StoronnimV-contact-section__textarea" placeholder="Повідомлення ..."></textarea>
-							<input type="submit" class="StoronnimV-contact-section__btn" value="Відправити">
-						</form>
-					</div>
+		</div></div>
+		<div class="slide" data-anchor="slide3"><div class="container">
+			<div class="row StoronnimV-gallery-section__row">
+				<h2 class="col-12 StoronnimV-gallery-section__head">ГАЛЕРЕЯ</h2>
+				<a href="#" class="col-12 StoronnimV-gallery-section__img-wrapper">СТОРОННІМ В</a>
+			</div>
+		</div></div>
+		<div class="slide" data-anchor="slide4"><div class="container">
+			<div class="row StoronnimV-gallery-section__row">
+				<h2 class="col-12 StoronnimV-gallery-section__head">ГАЛЕРЕЯ</h2>
+				<a href="#" class="col-12 StoronnimV-gallery-section__img-wrapper">СТОРОННІМ В</a>
+			</div>
+		</div></div>
+	</div>
+	<div class="section StoronnimV-contact-section">
+		<footer class="StoronnimV-contact-section__footer">
+			<div class="container-fluid StoronnimV-contact-section__container-fluid">
+				<span class="StoronnimV-contact-section__copyright">© 2019 Company. All right reserved.</span>
+				<span class="StoronnimV-contact-section__name">Стороннім В</span>
+				<ul class="StoronnimV-contact-section__list">
+					<li class="StoronnimV-contact-section__list-item"><a target="_blank" href="https://soundcloud.com/apostolkremenchug"><img src="{{ asset('img/icons/soundcloud.svg') }}" alt=""></a></li> 
+					<li class="StoronnimV-contact-section__list-item"><a target="_blank" href="https://www.facebook.com/%D0%A1%D1%82%D0%BE%D1%80%D0%BE%D0%BD%D0%BD%D1%96%D0%BC-%D0%92-377358619512485/"><img src="{{ asset('img/icons/facebook.svg') }}" alt=""></a></li>
+					<li class="StoronnimV-contact-section__list-item"><a target="_blank" href="https://www.youtube.com/"><img src="{{ asset('img/icons/youtube.svg') }}" alt=""></a></li>
+					<li class="StoronnimV-contact-section__list-item"><a target="_blank" href="#"><img src="{{ asset('img/icons/social/telegram.svg') }}" alt=""></a></li>
+				</ul>
+			</div>
+		</footer>
+		<div id="map"></div>
+		<div class="container StoronnimV-contact-section__container">
+			<div class="row StoronnimV-contact-section__row">
+				<div class="col-md-12 col-lg-8 StoronnimV-contact-section__col">
+					<p class="StoronnimV-contact-section__head">Зв'яжіться з нами</p>
+					<form method="post" action="{{ route('saveMessage') }}" class="StoronnimV-contact-section__form">
+						@csrf
+						<input type="email" class="StoronnimV-contact-section__email" name="email" required placeholder="Ваша пошта ...">
+						<textarea class="StoronnimV-contact-section__textarea" name="message" required placeholder="Повідомлення ..."></textarea>
+						<input type="submit" class="StoronnimV-contact-section__btn" value="Відправити">
+					</form>
 				</div>
 			</div>
 		</div>
