@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'skin' => 'blue',
+    'skin' => 'black',
 
     /*
     |--------------------------------------------------------------------------
@@ -108,27 +108,39 @@ return [
     */
 
     'menu' => [
-        'MAIN NAVIGATION',
         [
-            'text' => 'Blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
+            'text' => 'На главную',
+            'url'  => '/',
+            'icon' => 'home',
+            // 'can'  => 'manage-blog',
         ],
+        'РЕДАКТИРОВАНИЕ КОНТЕНТА',
         [
-            'text'        => 'Pages',
-            'url'         => 'admin/pages',
+            'text'        => 'Новости',
+            'url'         => '',
             'icon'        => 'file',
-            'label'       => 4,
-            'label_color' => 'success',
+            // 'label'       => 4,
+            // 'label_color' => 'success',
+            'submenu' => [
+                [
+                    'text' => 'Добавить анонс или новость',
+                    'url'  => '/news/create',
+                ],
+                [
+                    'text' => 'Показать новости',
+                    'url'  => '/news',
+                ],
+            ],
+
         ],
-        'ACCOUNT SETTINGS',
+        'УЧЕТНАЯ ЗАПИСЬ',
         [
-            'text' => 'Profile',
+            'text' => 'Профиль',
             'url'  => 'admin/settings',
             'icon' => 'user',
         ],
         [
-            'text' => 'Change Password',
+            'text' => 'Изменить пароль',
             'url'  => 'admin/settings',
             'icon' => 'lock',
         ],

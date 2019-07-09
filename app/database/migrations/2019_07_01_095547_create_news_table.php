@@ -21,7 +21,7 @@ class CreateNewsTable extends Migration
             $table->enum('type',['announce' , 'news']);
             $table->integer('user_id');
             $table->string('title_image');
-            $table->integer('category_id');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
