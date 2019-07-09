@@ -27,21 +27,19 @@ Route::post('/feedback', 'FeedbackController@store')->name('saveMessage');
 
 /*
 * This expression disables registration option to admin panel.
-*
 */
 Auth::routes(['register' => false]);
 
 /*
 * This route is for homepage of the admin panel.
-* This route is ouside of Auth group due to Auth middleware set at HomeController constructor.
-*
+* This route is ouside of Auth group due to 
+* 'auth' middleware is being set by HomeController constructor.
 */
 Route::get('/home', 'HomeController@index')->name('home');
 
 /*
 * This is Auth group.
 * All routes within this group are accessible only for authorized users.
-*
 */
 Route::group(['middleware' => ['auth']], function () {
 
