@@ -45,7 +45,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::prefix('/news')->group(function () {
         Route::get('/', 'NewsController@index');
-        Route::get('/create', 'NewsController@create');
+        Route::get('/create/news', 'NewsController@createNews');
+        Route::get('/create/announcement', 'NewsController@createAnnouncement');
         Route::get('/archive', 'NewsController@archive');
         Route::post('/store', 'NewsController@store');
         // Route::post('/avatar', 'UserController@updateAvatar');

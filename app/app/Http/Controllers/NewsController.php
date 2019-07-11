@@ -25,9 +25,19 @@ class NewsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function createNews()
     {
-        return view('admin.news.create');
+        return view('admin.news.createNews');
+    }
+
+    /**
+     * Show the form for creating a news.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function createAnnouncement()
+    {
+        return view('admin.news.createAnnouncement');
     }
 
     /**
@@ -46,14 +56,19 @@ class NewsController extends Controller
             'title_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             ]);
         $validatedData['user_id'] = Auth::user()->id;
-        $imageName = $request->title_image->getClientOriginalName();
-        $imagePath = $request->title_image->storeAs('images', $imageName);
-        $validatedData['title_image'] = $imageName;
+        if (! empty($request->event_date)) {
+            dd($request->event_date);
+            $validatedData['event_date'] = $request->event_date; 
+        }
+        if ($request->hasFile('title_image')) {
+            $imageName = $request->title_image->getClientOriginalName();
+            $imagePath = $request->title_image->storeAs('images', $imageName);
+            $validatedData['title_image'] = $imageName;
+        }
         $model = new News();
         $model->create($validatedData);
-        // dd($model);
-        $notice = 'Данные успешно сохранены';
-        return redirect('/home')->with('flash_message', ['success', $notice]);
+        $notice = 'Новина успішно збережена';
+        return redirect()->back()->with('flash_message', ['success', $notice]);
     }
 
     /**

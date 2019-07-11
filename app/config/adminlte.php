@@ -123,8 +123,12 @@ return [
             // 'label_color' => 'success',
             'submenu' => [
                 [
-                    'text' => 'Додати анонс чи новину',
-                    'url'  => '/news/create',
+                    'text' => 'Додати новину',
+                    'url'  => '/news/create/news',
+                ],
+                [
+                    'text' => 'Додати анонс',
+                    'url'  => '/news/create/announcement',
                 ],
                 [
                     'text' => 'Актуальні новини',
