@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'driver' => env('MAIL_DRIVER', 'smtp'),
+    'driver' => env('MAIL_DRIVER', 'mailgun'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,9 +56,20 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'office@storonnimv.rocks'),
+        'name' => env('MAIL_FROM_NAME', 'Адміністратор'),
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Global "Reply to" Address
+    |--------------------------------------------------------------------------
+    |
+    | Here, you may specify a name and address that is used globally 
+    | for receiving answers on e-mails that were sent by your application.
+    |
+    */
+    // 'reply_to' => ['address' => 'example@example.com', 'name' => 'App Name'],
 
     /*
     |--------------------------------------------------------------------------

@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 2',
+    'title' => 'Стороннім В',
 
     'title_prefix' => '',
 
@@ -123,12 +123,16 @@ return [
             // 'label_color' => 'success',
             'submenu' => [
                 [
-                    'text' => 'Добавить анонс или новость',
+                    'text' => 'Додати анонс чи новину',
                     'url'  => '/news/create',
                 ],
                 [
-                    'text' => 'Показать новости',
+                    'text' => 'Актуальні новини',
                     'url'  => '/news',
+                ],
+                [
+                    'text' => 'Архів новин',
+                    'url'  => '/news/archive',
                 ],
             ],
 
