@@ -14,20 +14,6 @@
 </head>
 <body>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div id="preloader">
 	<div class="wrapper">
 		<div class="box-wrap">
@@ -90,12 +76,6 @@
 </header><!-- <div class="testpage">
 </div> -->
 
-
-
-
-
-
-
 <div id="fullpage">
 
 	<div class="section StoronnimV-welcome-section">
@@ -120,7 +100,7 @@
 						</div>
 						<div class="col-12 StoronnimV-about-section__fluid">
 							<p class="StoronnimV-about-section__name">СТОРОННІМ В</p>
-							<p class="StoronnimV-about-section__content">Історія груту історія гурту учторія гурту. Історія груту історія гурту учторія гурту. Історія груту історія гурту учторія гурту. Історія груту історія гурту учторія гурту. Історія груту історія гурту учторія гурту. Історія груту історія гурту учторія гурту. Історія груту історія гурту учторія гурту. Історія груту історія гурту учторія гурту. Історія груту історія гурту учторія гурту. Історія груту історія гурту учторія гурту. Історія груту історія гурту учторія гурту. Історія груту історія гурту учторія гурту. Історія груту історія гурту учторія гурту. Історія груту історія гурту учторія гурту. Історія груту історія гурту учторія гурту. Історія груту історія гурту учторія гурту. Історія груту історія гурту учторія гурту. Історія груту історія гурту учторія гурту. Історія груту історія гурту учторія гурту. Історія груту історія гурту учторія гурту. Історія груту історія гурту учторія гурту. Історія груту історія гурту учторія гурту. Історія груту історія гурту учторія гурту. Історія груту історія гурту учторія гурту. Історія груту історія гурту учторія гурту. Історія груту історія гурту учторія гурту. Історія груту історія гурту учторія гурту. Історія груту історія гурту учторія гурту. Історія груту історія гурту учторія гурту. Історія груту історія гурту учторія гурту. Історія груту історія гурту учторія гурту. Історія груту історія гурту учторія гурту. Історія груту історія гурту учторія гурту. </p>
+							<p class="StoronnimV-about-section__content">Історія груту історія гурту історія гурту. Історія груту історія гурту історія гурту. Історія груту історія гурту історія гурту. Історія груту історія гурту історія гурту. Історія груту історія гурту історія гурту. Історія груту історія гурту історія гурту. Історія груту історія гурту історія гурту. Історія груту історія гурту історія гурту. Історія груту історія гурту історія гурту. Історія груту історія гурту історія гурту. Історія груту історія гурту історія гурту. Історія груту історія гурту історія гурту. Історія груту історія гурту історія гурту. Історія груту історія гурту історія гурту. Історія груту історія гурту історія гурту. Історія груту історія гурту історія гурту. Історія груту історія гурту історія гурту. Історія груту історія гурту історія гурту. Історія груту історія гурту історія гурту. Історія груту історія гурту історія гурту. Історія груту історія гурту історія гурту. Історія груту історія гурту історія гурту. Історія груту історія гурту історія гурту. Історія груту історія гурту історія гурту. Історія груту історія гурту історія гурту. Історія груту історія гурту історія гурту. Історія груту історія гурту історія гурту. Історія груту історія гурту історія гурту. Історія груту історія гурту історія гурту. Історія груту історія гурту історія гурту. Історія груту історія гурту історія гурту. Історія груту історія гурту історія гурту. Історія груту історія гурту історія гурту. </p>
 						</div>
 
 					</div>
@@ -138,116 +118,11 @@
 		<br><br><br><br><br><br><br> -->
 		Hi there
 	</div>
-	
-	<div class="section StoronnimV-news-section">
-		<!-- <a href="#" class="StoronnimV-news-section__more-news">Всі новини</a> -->
-		<!-- <p class="StoronnimV-news-section__section-name">НОВИНИ</p> -->
-		<div class="container">
-			<div class="row StoronnimV-news-section__news-wrap">
-				@foreach($news as $news)
-					<div class="col-md-10 col-lg-6 StoronnimV-news-section__news">
-						<div class="StoronnimV-news-section__news-content">
-							<div class="StoronnimV-news-section__text-div">
-								<div class="StoronnimV-news-section__wrap-main-text">
-									<a href="#" class="StoronnimV-news-section__heading">{{ $news->title }}<!--  Названiе новостi Названiе новостi Названiе новостi Названiе новостi Названiе --></a>
-									<p class="StoronnimV-news-section__description">{{ $news->content }}</p>
-								</div>
-								<div class="StoronnimV-news-section__news-footer">
-									<a href="#" class="StoronnimV-news-section__like">120</a>
-									<a href="#" class="StoronnimV-news-section__read-more">Дізнатися більше</a>
-								</div>
-							</div>
-						</div>
-						<div class="StoronnimV-news-section__news-date-div">
-							<span class="StoronnimV-news-section__month">{{ $news->updated_at->format('M') }}</span>
-							<span class="StoronnimV-news-section__day">{{ $news->updated_at->format('d') }}</span>
-						</div>
-					</div>
-				@endforeach
-				{{--<div class="col-md-10 col-lg-6 StoronnimV-news-section__news">
-					<!-- <div class="padding-hack">
-						<img src="img/news1.jpg" alt="img" class="img">
-					</div>
-					<div class="StoronnimV-news-section__news-text-div"></div>
-					<div class="StoronnimV-news-section__news-date-div">
-						<span class="StoronnimV-news-section__month">ИЮН</span>
-						<span class="StoronnimV-news-section__day">12</span>
-					</div> -->
-					<div class="StoronnimV-news-section__news-content">
-						<div class="StoronnimV-news-section__text-div">
-							<div class="StoronnimV-news-section__wrap-main-text">
-								<a href="#" class="StoronnimV-news-section__heading">Названiе новости<!--  Названiе новостi Названiе новостi Названiе новостi Названiе новостi Названiе --></a>
-								<p class="StoronnimV-news-section__description">Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний Дополнiтельний текстД ополнiтельний текст</p>
-							</div>
-							<div class="StoronnimV-news-section__news-footer">
-								<a href="#" class="StoronnimV-news-section__like">120</a>
-								<a href="#" class="StoronnimV-news-section__read-more">Дізнатися більше</a>
-							</div>
-						</div>
-					</div>
-					<div class="StoronnimV-news-section__news-date-div">
-						<span class="StoronnimV-news-section__month">ИЮН</span>
-						<span class="StoronnimV-news-section__day">12</span>
-					</div>
-				</div>
-				<div class="col-md-10 col-lg-6 StoronnimV-news-section__news">
-					<div class="StoronnimV-news-section__news-content">
-						<div class="StoronnimV-news-section__text-div">
-							<div class="StoronnimV-news-section__wrap-main-text">
-								<a href="#" class="StoronnimV-news-section__heading">Названiе новости<!--  Названiе новостi Названiе новостi Названiе новостi Названiе новостi Названiе --></a>
-								<p class="StoronnimV-news-section__description">Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний Дополнiтельний текстД ополнiтельний текст</p>
-							</div>
-							<div class="StoronnimV-news-section__news-footer">
-								<a href="#" class="StoronnimV-news-section__like">120</a>
-								<a href="#" class="StoronnimV-news-section__read-more">Дізнатися більше</a>
-							</div>
-						</div>
-					</div>
+	{{--@if (! empty($announcement))--}}
+		@include ('partials.announceAndNews')
+	{{--@else
+		@include ('partials.fourNews')--}}
 
-					<div class="StoronnimV-news-section__news-date-div">
-						<span class="StoronnimV-news-section__month">ИЮН</span>
-						<span class="StoronnimV-news-section__day">12</span>
-					</div>
-				</div>
-				<div class="col-md-10 col-lg-6 StoronnimV-news-section__news">
-					<div class="StoronnimV-news-section__news-content">
-						<div class="StoronnimV-news-section__text-div">
-							<div class="StoronnimV-news-section__wrap-main-text">
-								<a href="#" class="StoronnimV-news-section__heading">Названiе новости<!--  Названiе новостi Названiе новостi Названiе новостi Названiе новостi Названiе --></a>
-								<p class="StoronnimV-news-section__description">Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний Дополнiтельний текстД ополнiтельний текст</p>
-							</div>
-							<div class="StoronnimV-news-section__news-footer">
-								<a href="#" class="StoronnimV-news-section__like">120</a>
-								<a href="#" class="StoronnimV-news-section__read-more">Дізнатися більше</a>
-							</div>
-						</div>
-					</div>
-					<div class="StoronnimV-news-section__news-date-div">
-						<span class="StoronnimV-news-section__month">ИЮН</span>
-						<span class="StoronnimV-news-section__day">12</span>
-					</div>
-				</div>
-				<div class="col-md-10 col-lg-6 StoronnimV-news-section__news">
-					<div class="StoronnimV-news-section__news-content">
-						<div class="StoronnimV-news-section__text-div">
-							<div class="StoronnimV-news-section__wrap-main-text">
-								<a href="#" class="StoronnimV-news-section__heading">Названiе новости<!--  Названiе новостi Названiе новостi Названiе новостi Названiе новостi Названiе --></a>
-								<p class="StoronnimV-news-section__description">Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний Дополнiтельний текстД ополнiтельний текст</p>
-							</div>
-							<div class="StoronnimV-news-section__news-footer">
-								<a href="#" class="StoronnimV-news-section__like">120</a>
-								<a href="#" class="StoronnimV-news-section__read-more">Дізнатися більше</a>
-							</div>
-						</div>
-					</div>
-					<div class="StoronnimV-news-section__news-date-div">
-						<span class="StoronnimV-news-section__month">ИЮН</span>
-						<span class="StoronnimV-news-section__day">12</span>
-					</div>
-				</div>--}}
-			</div>
-		</div>
-	</div>
 	<section class="section StoronnimV-music-section">
 		<div class="container">
 			<div class="row StoronnimV-music-section__row">
