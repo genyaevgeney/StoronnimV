@@ -50,14 +50,14 @@ class NewsController extends Controller
     {
         $validatedData = $request->validate([
             'title' => 'required',
-            'tag' => 'required',
+            'tag' => 'max:255',
             'content' => 'required',
             'type' => 'required',
             'title_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'alt' => 'max:255',
             ]);
         $validatedData['user_id'] = Auth::user()->id;
         if (! empty($request->event_date)) {
-            dd($request->event_date);
             $validatedData['event_date'] = $request->event_date; 
         }
         if ($request->hasFile('title_image')) {
