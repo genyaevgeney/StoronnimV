@@ -118,11 +118,13 @@
 		<br><br><br><br><br><br><br> -->
 		Hi there
 	</div>
-	{{--@if (! empty($announcement))--}}
+	<!-- News section starts here -->
+	@if (! empty($announcement))
 		@include ('partials.announceAndNews')
-	{{--@else
-		@include ('partials.fourNews')--}}
-
+	@else
+		@include ('partials.fourNews')
+	@endif
+	<!-- News section ends here -->
 	<section class="section StoronnimV-music-section">
 		<div class="container">
 			<div class="row StoronnimV-music-section__row">

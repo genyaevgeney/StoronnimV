@@ -24,6 +24,13 @@ class IndexController extends Controller
         	$news = News::getLastNews(4);
         }
         // $news = News::getLastNews(4);
-        return view('index', ['announcement' => $announcement, 'news' => $news]);
+        // dd($announcement, $news);
+        // foreach ($news as $news) {
+        //     $i = 1;
+        //     $newsImageStyle = [$i] background-image: url("{{ URL::asset('/images/'''.$news->title_image.''')}}")''';
+        // }
+        // $newsImageStyle = "background-image: url('{{ URL::asset('/images/".$news->title_image.")}}')";
+        // dd($newsImageStyle);
+        return view('index', ['announcement' => $announcement, 'news' => $news,/* 'newsStyle' => $newsImageStyle*/]);
     }
 }

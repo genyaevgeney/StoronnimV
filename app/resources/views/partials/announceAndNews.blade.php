@@ -4,7 +4,7 @@
 			<!-- Анонс начинается здесь -->
 			<div class="col-md-12 col-lg-12 StoronnimV-news-section__news">
 				<div class="row StoronnimV-news-section__announcement">
-					<div class="col-md-10 col-lg-10 StoronnimV-news-section__news">
+					<div class="col-md-10 col-lg-12 StoronnimV-news-section__news">
 						<div class="StoronnimV-news-section__news-content" >
 							<div class="StoronnimV-news-section__text-div">
 								<div class="StoronnimV-news-section__wrap-main-text">
