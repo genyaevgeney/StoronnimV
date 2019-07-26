@@ -24,6 +24,7 @@ class News extends Model
         'alt',
         'event_date',       
     ];
+    public $imgPath;
 
     static function getAll()
     {
