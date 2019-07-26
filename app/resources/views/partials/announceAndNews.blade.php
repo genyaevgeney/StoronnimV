@@ -6,6 +6,7 @@
 				<div class="row StoronnimV-news-section__announcement">
 					<div class="col-md-10 col-lg-12 StoronnimV-news-section__news">
 						<div class="StoronnimV-news-section__news-content" >
+							<img src="{{ asset("$announcement->imgPath") }}" alt="{{ $announcement->alt }}" class="StoronnimV-news-section__news-image">
 							<div class="StoronnimV-news-section__text-div">
 								<div class="StoronnimV-news-section__wrap-main-text">
 									<a href="#" class="StoronnimV-news-section__heading">{{ $announcement->title }}</a>
@@ -28,6 +29,7 @@
 			@foreach($news as $news)
 				<div class="col-md-10 col-lg-6 StoronnimV-news-section__news">
 					<div class="StoronnimV-news-section__news-content">
+						<img src="{{ asset('$news->imgPath') }}" alt="{{ $news->alt }}" class="StoronnimV-news-section__news-image">
 						<div class="StoronnimV-news-section__text-div">
 							<div class="StoronnimV-news-section__wrap-main-text">
 								<a href="#" class="StoronnimV-news-section__heading">{{ $news->title }}</a>
