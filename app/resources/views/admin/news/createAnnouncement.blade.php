@@ -57,11 +57,11 @@
                         <input class="form-control" id="alt" type="text" name="alt" required
                                value="{{ old('alt') }}">
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="tag">Зазначте теги до фото чрез кому, без #</label>
                         <input class="form-control" id="tag" type="text" name="tag" required
                         	   value="{{ old('tag') }}">
-                    </div>
+                    </div> -->
                     
                     
                 <div class="box-footer">

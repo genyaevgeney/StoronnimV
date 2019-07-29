@@ -28,7 +28,7 @@ Route::post('/feedback', 'FeedbackController@store')->name('saveMessage');
 /*
 * This expression disables registration option to admin panel.
 */
-Auth::routes(['register' => false]);
+Auth::routes(['register' => true]);
 
 /*
 * This route is for homepage of the admin panel.
@@ -49,10 +49,6 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/create/announcement', 'NewsController@createAnnouncement');
         Route::get('/archive', 'NewsController@archive');
         Route::post('/store', 'NewsController@store');
-        // Route::post('/avatar', 'UserController@updateAvatar');
-        // Route::post('/information', 'UserController@editInformation');
-        // Route::post('/password', 'UserController@editPassword');
-        // Route::get('/set-lang/{lang}/{route}', 'UserController@setLang');
     });
 
 

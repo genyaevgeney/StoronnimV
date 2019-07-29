@@ -20,7 +20,9 @@ class News extends Model
         'content',
         'type',
         'user_id',
-        'title_image',        
+        'title_image',
+        'alt',
+        'event_date',       
     ];
 
     static function getAll()

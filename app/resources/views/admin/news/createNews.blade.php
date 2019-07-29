@@ -12,7 +12,7 @@
             @csrf
             <div class="box box-default">
                 <div class="box-header with-border">
-                    <h4>Щоб додати новину заповніть форму</h4>
+                    <h4>Заповніть форму щоб додати новину</h4>
                 </div>
                 @if ($errors->any())
                     <div class="alert alert-danger">

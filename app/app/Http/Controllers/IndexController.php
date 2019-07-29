@@ -23,6 +23,6 @@ class IndexController extends Controller
         } else {
         	$news = News::getLastNews(4);
         }
-        return view('index', ['announcement' => $announcement, 'news' => $news]);
+        return view('index', ['announcement' => $announcement, 'news' => $news,/* 'newsStyle' => $newsImageStyle*/]);
     }
 }
