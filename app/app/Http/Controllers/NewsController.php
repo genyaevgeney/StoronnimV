@@ -87,7 +87,7 @@ class NewsController extends Controller
         }
         if ($request->hasFile('title_image')) {
             $imageName = $request->title_image->getClientOriginalName();
-            $imagePath = $request->title_image->storeAs('images', $imageName);
+            $imagePath = $request->title_image->storeAs('images', $imageName, 'public');
             $validatedData['title_image'] = $imageName;
         }
         $model = new News();

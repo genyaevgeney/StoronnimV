@@ -18,11 +18,23 @@ class IndexController extends Controller
     public function index()
     {
         $announcement = News::getLastAnnouncement();
+
         if (!empty($announcement)) {
         	$news = News::getLastNews(2);
         } else {
         	$news = News::getLastNews(4);
         }
-        return view('index', ['announcement' => $announcement, 'news' => $news,/* 'newsStyle' => $newsImageStyle*/]);
+
+        if (!empty($announcement)) {
+            $announcement->imgPath = 'storage/images/'.$announcement->title_image;
+        }
+
+        if (!empty($news)) {
+            foreach ($news as $new) {
+                $new->imgPath = 'storage/images/'.$new->title_image;
+            }
+        }
+
+        return view('index', ['announcement' => $announcement, 'news' => $news,]);
     }
 }

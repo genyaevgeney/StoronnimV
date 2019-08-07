@@ -14,7 +14,7 @@ class AddEventDateColumnToNews extends Migration
     public function up()
     {
         Schema::table('news', function (Blueprint $table) {
-            $table->string('event_date');
+            $table->string('event_date')->nullable()->default('NULL');
         });
     }
 
