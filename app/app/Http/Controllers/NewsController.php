@@ -9,6 +9,32 @@ use Illuminate\Support\Facades\Auth;
 class NewsController extends Controller
 {
     /**
+     * Display news step by step by means of ajax.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function allNews()
+    {
+        $announcement = News::getLastAnnouncement();
+        $news = News::getLastNews(6)->toJson(JSON_PRETTY_PRINT);
+        return view('allNews', ['announcement' => $announcement, 'news' => $news]);
+    }
+
+    /**
+     * Retrieve a portion of news.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getNewsPortion()
+    {
+        $startFrom = $_POST['startFrom'];
+        $portion = $_POST['portion'];
+        $news = News::getNewsPortion($startFrom, $portion)->toJson(JSON_PRETTY_PRINT);
+        // dd($news);
+        return $news;
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response

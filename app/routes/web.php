@@ -18,6 +18,8 @@ Route::view('/test', 'test');//This route is for dev purposes only. To be delete
 * Should be kept outside Auth group.
 */
 Route::get('/', 'IndexController@index');
+Route::get('/allnews', 'NewsController@allNews');
+Route::post('/allnews', 'NewsController@getNewsPortion');
 
 /*
 * This route is for submitting user's request from the frontpage.
@@ -28,7 +30,7 @@ Route::post('/feedback', 'FeedbackController@store')->name('saveMessage');
 /*
 * This expression disables registration option to admin panel.
 */
-Auth::routes(['register' => true]);
+Auth::routes(['register' => false]);
 
 /*
 * This route is for homepage of the admin panel.

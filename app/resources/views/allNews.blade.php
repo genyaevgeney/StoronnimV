@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="initial-scale=1.0, width=device-width">
+	<meta name="csrf-token" content="{!! csrf_token() !!}">
 	<title>Стороннім В</title>
 	<link rel="shortcut icon" type="image/x-icon" href="fav/favicon.png">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
@@ -51,154 +52,54 @@
 	<div class="container StoronnimV-news">
 		<div class="row">
 			<h2 class="col-12 StoronnimV-news__page-title">Новини</h2>
-			<!-- news -->
-				<div class="col-md-10 col-lg-12 StoronnimV-news-section__news StoronnimV-news-section__announcement">
-					<div class="StoronnimV-news-section__news-content">
-						<img src="../news1.jpg" alt="img" class="StoronnimV-news-section__news-image">
-						<div class="StoronnimV-news-section__text-div">
-							<div class="StoronnimV-news-section__wrap-main-text">
-								<a href="#" class="StoronnimV-news-section__heading">Названiе новости<!--  Названiе новостi Названiе новостi Названiе новостi Названiе новостi Названiе --></a>
-								<p class="StoronnimV-news-section__description">Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний Дополнiтельний текстД ополнiтельний текст</p>
-							</div>
-							<div class="StoronnimV-news-section__news-footer">
-								<a href="#" class="StoronnimV-news-section__like">120</a>
-								<a href="#" class="StoronnimV-news-section__read-more">Дізнатися більше</a>
-							</div>
+			<!-- annoucement -->
+			<div class="col-md-10 col-lg-12 StoronnimV-news-section__news StoronnimV-news-section__announcement">
+				<div class="StoronnimV-news-section__news-content">
+					<img src="img/news1.jpg" alt="img" class="StoronnimV-news-section__news-image">
+					<div class="StoronnimV-news-section__text-div">
+						<div class="StoronnimV-news-section__wrap-main-text">
+							<a href="#" class="StoronnimV-news-section__heading">{{ $announcement->title }}</a>
+							<p class="StoronnimV-news-section__description">{{ $announcement->content }}</p>
+						</div>
+						<div class="StoronnimV-news-section__news-footer">
+							<a href="#" class="StoronnimV-news-section__like">120</a>
+							<a href="#" class="StoronnimV-news-section__read-more">Дізнатися більше</a>
 						</div>
 					</div>
+				</div>
 
-					<div class="StoronnimV-news-section__news-date-div">
-						<span class="StoronnimV-news-section__month">ИЮН</span>
-						<span class="StoronnimV-news-section__day">12</span>
-					</div>
+				<div class="StoronnimV-news-section__news-date-div">
+					<span class="StoronnimV-news-section__month">ИЮН</span>
+					<span class="StoronnimV-news-section__day">12</span>
 				</div>
-				<!-- news -->
-				<div class="col-md-10 col-lg-6 StoronnimV-news-section__news">
-					<div class="StoronnimV-news-section__news-content">
-						<img src="../news2.jpg" alt="img" class="StoronnimV-news-section__news-image">
-						<div class="StoronnimV-news-section__text-div">
-							<div class="StoronnimV-news-section__wrap-main-text">
-								<a href="#" class="StoronnimV-news-section__heading">Названiе новости<!--  Названiе новостi Названiе новостi Названiе новостi Названiе новостi Названiе --></a>
-								<p class="StoronnimV-news-section__description">Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний Дополнiтельний текстД ополнiтельний текст</p>
-							</div>
-							<div class="StoronnimV-news-section__news-footer">
-								<a href="#" class="StoronnimV-news-section__like">120</a>
-								<a href="#" class="StoronnimV-news-section__read-more">Дізнатися більше</a>
-							</div>
+			</div>
+			<!-- announcement end -->
+
+			<!-- news -->
+			@foreach (json_decode($news) as $news)
+			<div class="col-md-10 col-lg-6 StoronnimV-news-section__news">
+				<div class="StoronnimV-news-section__news-content">
+					<img src="img/news2.jpg" alt="img" class="StoronnimV-news-section__news-image">
+					<div class="StoronnimV-news-section__text-div">
+						<div class="StoronnimV-news-section__wrap-main-text">
+							<a href="#" class="StoronnimV-news-section__heading">{{ $news->title }}</a>
+							<p class="StoronnimV-news-section__description">{{ $news->content }}</p>
+						</div>
+						<div class="StoronnimV-news-section__news-footer">
+							<a href="#" class="StoronnimV-news-section__like">120</a>
+							<a href="#" class="StoronnimV-news-section__read-more">Дізнатися більше</a>
 						</div>
 					</div>
-					<div class="StoronnimV-news-section__news-date-div">
-						<span class="StoronnimV-news-section__month">ИЮН</span>
-						<span class="StoronnimV-news-section__day">12</span>
-					</div>
 				</div>
-				<!-- news -->
-				<div class="col-md-10 col-lg-6 StoronnimV-news-section__news">
-					<div class="StoronnimV-news-section__news-content">
-						<img src="../news3.jpg" alt="img" class="StoronnimV-news-section__news-image">
-						<div class="StoronnimV-news-section__text-div">
-							<div class="StoronnimV-news-section__wrap-main-text">
-								<a href="#" class="StoronnimV-news-section__heading">Названiе новости<!--  Названiе новостi Названiе новостi Названiе новостi Названiе новостi Названiе --></a>
-								<p class="StoronnimV-news-section__description">Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний Дополнiтельний текстД ополнiтельний текст</p>
-							</div>
-							<div class="StoronnimV-news-section__news-footer">
-								<a href="#" class="StoronnimV-news-section__like">120</a>
-								<a href="#" class="StoronnimV-news-section__read-more">Дізнатися більше</a>
-							</div>
-						</div>
-					</div>
-					<div class="StoronnimV-news-section__news-date-div">
-						<span class="StoronnimV-news-section__month">ИЮН</span>
-						<span class="StoronnimV-news-section__day">12</span>
-					</div>
+
+				<div class="StoronnimV-news-section__news-date-div">
+					<span class="StoronnimV-news-section__month">ИЮН</span>
+					<span class="StoronnimV-news-section__day">12</span>
 				</div>
-				<!-- news -->
-				<div class="col-md-10 col-lg-6 StoronnimV-news-section__news">
-					<div class="StoronnimV-news-section__news-content">
-						<img src="../news1.jpg" alt="img" class="StoronnimV-news-section__news-image">
-						<div class="StoronnimV-news-section__text-div">
-							<div class="StoronnimV-news-section__wrap-main-text">
-								<a href="#" class="StoronnimV-news-section__heading">Названiе новости<!--  Названiе новостi Названiе новостi Названiе новостi Названiе новостi Названiе --></a>
-								<p class="StoronnimV-news-section__description">Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний Дополнiтельний текстД ополнiтельний текст</p>
-							</div>
-							<div class="StoronnimV-news-section__news-footer">
-								<a href="#" class="StoronnimV-news-section__like">120</a>
-								<a href="#" class="StoronnimV-news-section__read-more">Дізнатися більше</a>
-							</div>
-						</div>
-					</div>
-					<div class="StoronnimV-news-section__news-date-div">
-						<span class="StoronnimV-news-section__month">ИЮН</span>
-						<span class="StoronnimV-news-section__day">12</span>
-					</div>
-				</div>
-				<!-- news -->
-				<!-- news -->
-				<div class="col-md-10 col-lg-6 StoronnimV-news-section__news">
-					<div class="StoronnimV-news-section__news-content">
-						<img src="../news2.jpg" alt="img" class="StoronnimV-news-section__news-image">
-						<div class="StoronnimV-news-section__text-div">
-							<div class="StoronnimV-news-section__wrap-main-text">
-								<a href="#" class="StoronnimV-news-section__heading">Названiе новости<!--  Названiе новостi Названiе новостi Названiе новостi Названiе новостi Названiе --></a>
-								<p class="StoronnimV-news-section__description">Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний Дополнiтельний текстД ополнiтельний текст</p>
-							</div>
-							<div class="StoronnimV-news-section__news-footer">
-								<a href="#" class="StoronnimV-news-section__like">120</a>
-								<a href="#" class="StoronnimV-news-section__read-more">Дізнатися більше</a>
-							</div>
-						</div>
-					</div>
-					<div class="StoronnimV-news-section__news-date-div">
-						<span class="StoronnimV-news-section__month">ИЮН</span>
-						<span class="StoronnimV-news-section__day">12</span>
-					</div>
-				</div>
-				<!-- news -->
-				<!-- news -->
-				<div class="col-md-10 col-lg-6 StoronnimV-news-section__news">
-					<div class="StoronnimV-news-section__news-content">
-						<img src="../news3.jpg" alt="img" class="StoronnimV-news-section__news-image">
-						<div class="StoronnimV-news-section__text-div">
-							<div class="StoronnimV-news-section__wrap-main-text">
-								<a href="#" class="StoronnimV-news-section__heading">Названiе новости<!--  Названiе новостi Названiе новостi Названiе новостi Названiе новостi Названiе --></a>
-								<p class="StoronnimV-news-section__description">Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний Дополнiтельний текстД ополнiтельний текст</p>
-							</div>
-							<div class="StoronnimV-news-section__news-footer">
-								<a href="#" class="StoronnimV-news-section__like">120</a>
-								<a href="#" class="StoronnimV-news-section__read-more">Дізнатися більше</a>
-							</div>
-						</div>
-					</div>
-					<div class="StoronnimV-news-section__news-date-div">
-						<span class="StoronnimV-news-section__month">ИЮН</span>
-						<span class="StoronnimV-news-section__day">12</span>
-					</div>
-				</div>
-				<!-- news -->
-				<!-- news -->
-				<div class="col-md-10 col-lg-6 StoronnimV-news-section__news">
-					<div class="StoronnimV-news-section__news-content">
-						<img src="../news1.jpg" alt="img" class="StoronnimV-news-section__news-image">
-						<div class="StoronnimV-news-section__text-div">
-							<div class="StoronnimV-news-section__wrap-main-text">
-								<a href="#" class="StoronnimV-news-section__heading">Названiе новости<!--  Названiе новостi Названiе новостi Названiе новостi Названiе новостi Названiе --></a>
-								<p class="StoronnimV-news-section__description">Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний текст Дополнiтельний Дополнiтельний текстД ополнiтельний текст</p>
-							</div>
-							<div class="StoronnimV-news-section__news-footer">
-								<a href="#" class="StoronnimV-news-section__like">120</a>
-								<a href="#" class="StoronnimV-news-section__read-more">Дізнатися більше</a>
-							</div>
-						</div>
-					</div>
-					<div class="StoronnimV-news-section__news-date-div">
-						<span class="StoronnimV-news-section__month">ИЮН</span>
-						<span class="StoronnimV-news-section__day">12</span>
-					</div>
-				</div>
-				<!-- news -->
+			</div>
+			@endforeach
 		</div>
 	</div>
-	
 	<br>
 	<br>
 	<br>

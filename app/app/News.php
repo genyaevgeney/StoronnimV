@@ -46,4 +46,13 @@ class News extends Model
     					  get();
     	return $lastNews;
     }
+
+    static function getNewsPortion($startFrom, $portion)
+    {
+        $newsPortion = self::orderBy('updated_at', 'desc')->
+                          skip($startFrom)->
+                          take($portion)->
+                          get();
+        return $newsPortion;
+    }    
 }

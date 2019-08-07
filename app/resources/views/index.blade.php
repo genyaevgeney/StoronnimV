@@ -30,7 +30,7 @@
 	<div class="container">
 		<nav class="StoronnimV-header__nav">
 			<ul id="menu" class="StoronnimV-header__list">
-				<li data-menuanchor="news" class="StoronnimV-header__list-item"><a id="test" class="StoronnimV-header__item-link" href="#news">Новини</a></li>
+				<li data-menuanchor="news" class="StoronnimV-header__list-item"><a id="test" class="StoronnimV-header__item-link" href="allnews">Новини</a></li>
 				<li data-menuanchor="music" class="StoronnimV-header__list-item"><a class="StoronnimV-header__item-link" href="#music">Музика</a></li>
 				<li data-menuanchor="media" class="StoronnimV-header__list-item"><a class="StoronnimV-header__item-link" href="#media">Вiдео</a></li>
 				<li data-menuanchor="welcome" class="StoronnimV-header__list-item StoronnimV-header__logo-wrap"><a class="StoronnimV-header__logo" href="#welcome">Стороннiм<span class="StoronnimV-header__space">В.</span></a></li>
