@@ -10,3 +10,5 @@ Homestead.yaml
 npm-debug.log.*
 yarn-error.log
 ../Storonnim-V_front/
+/resources/views/test.blade.php
+/app/Http/Controllers/TestController.php
