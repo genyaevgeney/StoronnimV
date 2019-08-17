@@ -19,8 +19,12 @@
 				</div>
 
 				<div class="StoronnimV-news-section__news-date-div">
-					<span class="StoronnimV-news-section__month">ИЮН</span>
-					<span class="StoronnimV-news-section__day">12</span>
+					<span class="StoronnimV-news-section__month">
+						{{ Carbon\Carbon::parse($news->updated_at)->locale('uk')->isoFormat('MMMM') }}
+					</span>
+					<span class="StoronnimV-news-section__day">
+						{{ Carbon\Carbon::parse($news->updated_at)->format('d') }}
+					</span>
 				</div>
 			</div>
 			@endforeach

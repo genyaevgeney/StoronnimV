@@ -53,33 +53,39 @@
 		<div class="row">
 			<h2 class="col-12 StoronnimV-news__page-title">Новини</h2>
 			<!-- annoucement -->
-			<div class="col-md-10 col-lg-12 StoronnimV-news-section__news StoronnimV-news-section__announcement">
-				<div class="StoronnimV-news-section__news-content">
-					<img src="img/news1.jpg" alt="img" class="StoronnimV-news-section__news-image">
-					<div class="StoronnimV-news-section__text-div">
-						<div class="StoronnimV-news-section__wrap-main-text">
-							<a href="#" class="StoronnimV-news-section__heading">{{ $announcement->title }}</a>
-							<p class="StoronnimV-news-section__description">{{ $announcement->content }}</p>
-						</div>
-						<div class="StoronnimV-news-section__news-footer">
-							<a href="#" class="StoronnimV-news-section__like">120</a>
-							<a href="#" class="StoronnimV-news-section__read-more">Дізнатися більше</a>
+			@if (! empty($announcement))
+				<div class="col-md-10 col-lg-12 StoronnimV-news-section__news StoronnimV-news-section__announcement">
+					<div class="StoronnimV-news-section__news-content">
+						<img src="{{ asset("storage/images/$announcement->title_image") }}" alt="{{ $announcement->alt }}" class="StoronnimV-news-section__news-image">
+						<div class="StoronnimV-news-section__text-div">
+							<div class="StoronnimV-news-section__wrap-main-text">
+								<a href="#" class="StoronnimV-news-section__heading">{{ $announcement->title }}</a>
+								<p class="StoronnimV-news-section__description">{{ $announcement->content }}</p>
+							</div>
+							<div class="StoronnimV-news-section__news-footer">
+								<a href="#" class="StoronnimV-news-section__like">120</a>
+								<a href="#" class="StoronnimV-news-section__read-more">Дізнатися більше</a>
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="StoronnimV-news-section__news-date-div">
-					<span class="StoronnimV-news-section__month">ИЮН</span>
-					<span class="StoronnimV-news-section__day">12</span>
+					<div class="StoronnimV-news-section__news-date-div">
+						<span class="StoronnimV-news-section__month">
+							{{ Carbon\Carbon::parse($announcement->updated_at)->locale('uk')->isoFormat('MMM') }}
+						</span>
+						<span class="StoronnimV-news-section__day">
+							{{ Carbon\Carbon::parse($announcement->updated_at)->format('d') }}
+						</span>
 				</div>
-			</div>
+				</div>
+			@endif
 			<!-- announcement end -->
 
 			<!-- news -->
 			@foreach (json_decode($news) as $news)
 			<div class="col-md-10 col-lg-6 StoronnimV-news-section__news">
 				<div class="StoronnimV-news-section__news-content">
-					<img src="img/news2.jpg" alt="img" class="StoronnimV-news-section__news-image">
+					<img src="{{ asset("storage/images/$news->title_image") }}" alt="{{ $news->alt }}" class="StoronnimV-news-section__news-image">
 					<div class="StoronnimV-news-section__text-div">
 						<div class="StoronnimV-news-section__wrap-main-text">
 							<a href="#" class="StoronnimV-news-section__heading">{{ $news->title }}</a>
@@ -87,17 +93,22 @@
 						</div>
 						<div class="StoronnimV-news-section__news-footer">
 							<a href="#" class="StoronnimV-news-section__like">120</a>
-							<a href="#" class="StoronnimV-news-section__read-more">Дізнатися більше</a>
+							<a href="{{ route('news', ['id' => $news->id,]) }}" class="StoronnimV-news-section__read-more">Дізнатися більше</a>
 						</div>
 					</div>
 				</div>
 
 				<div class="StoronnimV-news-section__news-date-div">
-					<span class="StoronnimV-news-section__month">ИЮН</span>
-					<span class="StoronnimV-news-section__day">12</span>
+					<span class="StoronnimV-news-section__month">
+						{{ Carbon\Carbon::parse($news->updated_at)->locale('uk')->isoFormat('MMMM') }}
+					</span>
+					<span class="StoronnimV-news-section__day">
+						{{ Carbon\Carbon::parse($news->updated_at)->format('d') }}
+					</span>
 				</div>
 			</div>
 			@endforeach
+			<!-- news end-->		
 		</div>
 	</div>
 	<br>
@@ -163,5 +174,6 @@
 	<script src="{{ asset('js/menu-main.js') }}"></script>
 	<script src="{{ asset('js/news-page.js') }}"></script>
 	<script src="{{ asset('js/ajax-content.js') }}"></script>
+	<script src="{{ asset('js/moment-with-locales.js') }}"></script>
 </body>
 </html>

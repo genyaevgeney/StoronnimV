@@ -13,7 +13,7 @@ class News extends Model
 {
     use SoftDeletes;
     protected $table = 'news';
-    protected $dates = ['deleted_at'];
+    protected $dates = ['deleted_at', 'created_at', 'updated_at'];
     protected $fillable = [
         'title',
         'tag',
@@ -45,7 +45,7 @@ class News extends Model
     	$lastNews = self::orderBy('updated_at', 'desc')->
     					  take($i)->
     					  get();
-    	return $lastNews;
+        return $lastNews;
     }
 
     static function getNewsPortion($startFrom, $portion)

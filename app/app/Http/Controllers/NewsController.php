@@ -16,8 +16,23 @@ class NewsController extends Controller
     public function allNews()
     {
         $announcement = News::getLastAnnouncement();
-        $news = News::getLastNews(6)->toJson(JSON_PRETTY_PRINT);
+        if (! empty($announcement)) {
+            $news = News::getLastNews(4)->toJson(JSON_PRETTY_PRINT);
+        } else {
+            $news = News::getLastNews(6)->toJson(JSON_PRETTY_PRINT);
+        }
         return view('allNews', ['announcement' => $announcement, 'news' => $news]);
+    }
+
+    /**
+     * Display one piece of news
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function oneNews($id)
+    {
+        $news = News::findOrFail($id);
+        return view('oneNews', ['news' => $news]);
     }
 
     /**
@@ -30,7 +45,6 @@ class NewsController extends Controller
         $startFrom = $_POST['startFrom'];
         $portion = $_POST['portion'];
         $news = News::getNewsPortion($startFrom, $portion)->toJson(JSON_PRETTY_PRINT);
-        // dd($news);
         return $news;
     }
 
