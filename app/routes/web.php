@@ -11,7 +11,7 @@
 |
 */
 
-Route::view('/test', 'test');//This route is for dev purposes only. To be deleted.
+Route::get('/test', 'TestController@test');//This route is for dev purposes only. To be deleted.
 
 /*
 * This is frontpage route.
@@ -19,6 +19,7 @@ Route::view('/test', 'test');//This route is for dev purposes only. To be delete
 */
 Route::get('/', 'IndexController@index');
 Route::get('/allnews', 'NewsController@allNews');
+Route::get('/news/{id}', 'NewsController@oneNews')->name('news');
 Route::post('/allnews', 'NewsController@getNewsPortion');
 
 /*
