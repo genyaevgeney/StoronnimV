@@ -64,7 +64,7 @@
 							</div>
 							<div class="StoronnimV-news-section__news-footer">
 								<a href="#" class="StoronnimV-news-section__like">120</a>
-								<a href="#" class="StoronnimV-news-section__read-more">Дізнатися більше</a>
+								<a href="{{ route('news', ['id' => $announcement->id,]) }}" class="StoronnimV-news-section__read-more">Дізнатися більше</a>
 							</div>
 						</div>
 					</div>

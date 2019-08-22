@@ -2,6 +2,8 @@ $(document).ready(function(){
 	var inProgress = false;
 	var startFrom = 6;
 	var portion = 6;
+	var hasAnnouncement = document.getElementById("announcement");
+	if (hasAnnouncement != 'null') {startFrom = 4}
 
 	$(window).scroll(function(){
 		if($(window).scrollTop() + $(window).height() >= $(document).height() && !inProgress) {
@@ -33,7 +35,7 @@ $(document).ready(function(){
 									</div>
 									<div class=\"StoronnimV-news-section__news-footer\">
 										<a href=\"#\" class=\"StoronnimV-news-section__like\"> 120 </a>
-										<a href=\"#\" class=\"StoronnimV-news-section__read-more\">Дізнатися більше</a>
+										<a href=\"news/` + data.id +`\" class=\"StoronnimV-news-section__read-more\">Дізнатися більше</a>
 									</div>
 								</div>
 							</div>

@@ -42,18 +42,20 @@ class News extends Model
 
     static function getLastNews($i)
     {
-    	$lastNews = self::orderBy('updated_at', 'desc')->
-    					  take($i)->
-    					  get();
+    	$lastNews = self::where('type', 'news')->
+                          orderBy('updated_at', 'desc')->
+                          take($i)->
+                          get();
         return $lastNews;
     }
 
     static function getNewsPortion($startFrom, $portion)
     {
-        $newsPortion = self::orderBy('updated_at', 'desc')->
-                          skip($startFrom)->
-                          take($portion)->
-                          get();
+        $newsPortion = self::where('type', 'news')->
+                             orderBy('updated_at', 'desc')->
+                             skip($startFrom)->
+                             take($portion)->
+                             get();
         return $newsPortion;
     }    
 }
