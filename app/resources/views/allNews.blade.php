@@ -54,7 +54,7 @@
 			<h2 class="col-12 StoronnimV-news__page-title">Новини</h2>
 			<!-- annoucement -->
 			@if (! empty($announcement))
-				<div class="col-md-10 col-lg-12 StoronnimV-news-section__news StoronnimV-news-section__announcement">
+				<div id="announcement" class="col-md-10 col-lg-12 StoronnimV-news-section__news StoronnimV-news-section__announcement">
 					<div class="StoronnimV-news-section__news-content">
 						<img src="{{ asset("storage/images/$announcement->title_image") }}" alt="{{ $announcement->alt }}" class="StoronnimV-news-section__news-image">
 						<div class="StoronnimV-news-section__text-div">
