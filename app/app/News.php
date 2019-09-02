@@ -57,5 +57,24 @@ class News extends Model
                              take($portion)->
                              get();
         return $newsPortion;
-    }    
+    }
+
+    static function getPreviousNews($date)
+    {
+        $previousNews = self::where('updated_at', '<', $date)->
+                             orderBy('updated_at', 'desc')->
+                             take(1)->
+                             get();
+        return $previousNews;
+    }
+
+    static function getNextNews($date)
+    {
+        $previousNews = self::where('updated_at', '>', $date)->
+                             orderBy('updated_at', 'asc')->
+                             take(1)->
+                             get();
+        return $previousNews;
+    } 
+   
 }

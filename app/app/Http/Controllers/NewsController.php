@@ -32,7 +32,30 @@ class NewsController extends Controller
     public function oneNews($id)
     {
         $news = News::findOrFail($id);
-        return view('oneNews', ['news' => $news]);
+        $previousNews = News::getPreviousNews($news->updated_at);
+        $nextNews = News::getNextNews($news->updated_at);
+        $data = News::orderBy('updated_at', 'desc')->paginate(6);
+        return view('oneNews', [
+            'news' => $news, 
+            'data' => $data, 
+            'previousNews' => $previousNews, 
+            'nextNews' => $nextNews
+        ]);
+    }
+
+    /**
+     * Fetch data for pagination at oneNews.blade.php
+     *
+     * @return
+     */
+    public function fetchData(Request $request)
+    {
+        if($request->ajax()){
+            $data = News::orderBy('updated_at', 'desc')->paginate(6);
+        }
+        // print("<pre>".print_r($request, true)."</pre>");
+        // die();
+        return view('partials.newsPagination', ['data' => $data])->render();
     }
 
     /**

@@ -21,6 +21,7 @@ Route::get('/', 'IndexController@index');
 Route::get('/allnews', 'NewsController@allNews');
 Route::get('/news/{id}', 'NewsController@oneNews')->name('news');
 Route::post('/allnews', 'NewsController@getNewsPortion');
+Route::get('pagination/fetch_data', 'NewsController@fetchData');
 
 /*
 * This route is for submitting user's request from the frontpage.
