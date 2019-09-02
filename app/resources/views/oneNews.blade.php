@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!--<div class="col-md-10 col-lg-6 StoronnimV-news-section__news">
 	<div class="StoronnimV-news-section__news-content">
 		<img src="{{ asset("storage/images/$news->title_image") }}" alt="{{ $news->alt }}" class="StoronnimV-news-section__news-image">
@@ -78,6 +79,7 @@
 			<div class="row StoronnimV-news__row-for-heading">
 				<div class="col">
 					<span class="StoronnimV-news__heading">
+<<<<<<< HEAD
 						{{ $news->title }} Назва новини Назва новини Назва новини Назва новини Назва новини 
 					</span>
 				</div>
@@ -123,6 +125,7 @@
 					</div>
 				</div>
 				<div class="StoronnimV-news__main-content">
+<<<<<<< HEAD
 					<p class="StoronnimV-news__main-text">{{ $news->content }} <!--текст основної новини--> </p>
 				</div>
 				<div class="StoronnimV-news__wrap-next-prev-news middle-news">
@@ -136,6 +139,7 @@
 			</div>
 			<div class="col-4 StoronnimV-news__section-latest-news">
 				<p class="StoronnimV-news__name-of-section">ОСТАННІ НОВИНИ</p>
+<<<<<<< HEAD
 				<div id="pagination_section">
 					@include('partials.newsPagination')
 				</div>
@@ -169,6 +173,7 @@
 	<script src="{{ asset('js/menu-main.js') }}"></script>
 	<script src="{{ asset('js/nav-on-page.js') }}"></script>
 	<script src="{{ asset('js/news.js') }}"></script>
+<<<<<<< HEAD
 	<!-- <script src="{{ asset('js/pagination.js') }}"></script> -->
 </body>
 </html>
